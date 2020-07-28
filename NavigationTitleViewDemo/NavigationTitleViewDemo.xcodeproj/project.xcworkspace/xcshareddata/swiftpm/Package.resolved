@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NavigationTitleView",
+        "repositoryURL": "https://github.com/amonshiz/NavigationTitleView",
+        "state": {
+          "branch": "main",
+          "revision": "82d7f9c28c213f363e33bcd5454a3346fc3a5979",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
