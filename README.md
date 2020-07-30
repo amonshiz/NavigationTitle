@@ -50,14 +50,34 @@ let package = Package(
 ### Add to an app
 - File -> Swift Packages -> Add Package Dependency ...
 - `https://github.com/amonshiz/NavigationTitleView.git`
-- Track the `main` branch
+- Track the `main` branch (I make no promises on keeping tags up to date)
 
 ### In the code
-```
+```swift
 import SwiftUI
 import NavigationTitleView
+
+struct ContentView: View {
+  @Namespace var aNamespace // required
+
+  var body: some View {
+    NavigationView {
+      // Does not need to be a list, but this is does demonstrate the `.large`
+      // style title behaviors best
+      List {
+        Text("Hello, world").padding()
+          // Used in the same place the usual `.navigationTitle(_)` or
+          // `.navigationBarTitle(_)` would be used
+          .navigationTitle("A Great Title", within: aNamespace)
+      }
+    }
+    // Should be used *on* the navigation stack to track
+    .rootNavigationBarIdentified(within: aNamespace)
+  }
+}
 ```
 
 ## Issues
 - Requires that any given navigation stack with in a `NavigationView` that wants to use this feature uses it for every title
 - Does not work with AppKit or watchOS yet
+- There is a bug in SwiftUI that causes an `[Assert]` to fire after pushing two views onto a navigation stack ([feedback documented here](https://github.com/amonshiz/feedback-examples/blob/main/README.md#displaymodebuttonissue)) so just know that isn't caused by this!

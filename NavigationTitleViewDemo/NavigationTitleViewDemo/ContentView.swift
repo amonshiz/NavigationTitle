@@ -9,26 +9,25 @@ import SwiftUI
 import NavigationTitleView
 
 struct ContentView: View {
-  @State var selection: Int = 1
+  @Namespace var contentView
+  @State var selection: String = "All"
   var body: some View {
     NavigationView {
       List {
         Text("Hello, world!").padding()
       }
-      .navigationTitle("First")
       .toolbar(items: {
-        ToolbarItem {
-          NavigationTitleView(
-            content:
-              Picker(selection: $selection, label: Text("Hello")) {
-                Text("1").tag(1)
-                Text("2").tag(2)
-              }
-              .pickerStyle(SegmentedPickerStyle())
-          )
+        ToolbarItem(placement: .principal) {
+          Picker(selection: $selection, label: Text("Call Type")) {
+            Text("All").tag("All")
+            Text("Missed").tag("Missed")
+          }
+          .pickerStyle(SegmentedPickerStyle())
         }
       })
+      .navigationTitle("Recents", within: contentView)
     }
+    .rootNavigationBarIdentified(within: contentView)
   }
 }
 
