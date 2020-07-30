@@ -18,14 +18,46 @@ The use case is something like the "Recents" tab in the Phone.app UI.
 
 ## Solution
 
-Use `UIViewRepresentable` to hook directly into the underlying UIKit objects
-and insert the desired SwiftUI views into the top most navigation controller's
-`navigationItem.titleView`. This ends up working okay. 
-- When used on the root view controller, everything appears correctly
-- When used with other view controllers on the navigation stack, the `titleView`'s content is not presented until the animation has settled, unclear why
+Use `UIViewConrollerRepresentable` to hook directly into the underlying UIKit 
+objects and insert the desired text into the view controller and its attendant
+`navigationItem`. This works really well but does rely on a bit of internal
+book keeping and the assumption that once any part of a navigation stack uses
+this system, *all* of that stack uses this system. In practices this isn't so
+bad because the only exposed methods are extensions on `View` that are
+extremely similar to existing functionality.
+
+## Usage
+
+### Another Swift package
+Add to your `Package.swift` file
+```
+let package = Package(
+  ...
+  dependencies = [
+    .package(url: "https://github.com/amonshiz/NavigationTitleView.git", Package.Dependency.Requirement.branch("main")),
+    ...
+  ],
+  targets = [
+    .target(
+      name: "YourTarget",
+      dependencies: ["NavigationTitleView", …],
+      ...),
+    ...
+  ]
+)
+```
+
+### Add to an app
+- File -> Swift Packages -> Add Package Dependency ...
+- `https://github.com/amonshiz/NavigationTitleView.git`
+- Track the `main` branch
+
+### In the code
+```
+import SwiftUI
+import NavigationTitleView
+```
 
 ## Issues
-- As mentioned above, the view does not appear as expected *during* the animation of new view controllers onto the stack, but only after animation has completed
-- The implementation makes assumptions that the content will always fit in whatever size is available using the `fixedSize()` modifier which then lets SwiftUI compress content to the intrinsic size. However, if that intrinsic size is greater than actually available, too bad.
-- This is making use of a `UIViewRepresentable` view that then owns a `UIHostingController` and sticks *that* `view` into the `titleView` property, this is pretty silly
+- Requires that any given navigation stack with in a `NavigationView` that wants to use this feature uses it for every title
 - Does not work with AppKit or watchOS yet
