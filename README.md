@@ -14,7 +14,7 @@ one conflict between the display mode and toolbar item API: with a `large` or
 be displayed at all.
 
 The use case is something like the "Recents" tab in the Phone.app UI.
-[Phone.app UI for Recents tab](Images/IMG_A66A35C991EA-1.jpeg)
+![Phone.app UI for Recents tab](Images/IMG_A66A35C991EA-1.jpeg)
 
 ## Solution
 
