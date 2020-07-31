@@ -1,6 +1,6 @@
 # NavigationTitleView
 
-Package to enable `titleView` with `navigationBarTitle` in SwiftUI
+Package to enable `titleView` or `ToolbarItemPlacement.principal` with a navigation bar title in SwiftUI
 
 ## Problem
 
