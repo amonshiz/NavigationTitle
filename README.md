@@ -3,7 +3,7 @@
 Package that lets a `navigationTitle` and a `ToolbarItemPlacement.principal` work together
 
 Make your dreams come true!
-![PhoneRecentsTab](./Images/IMG_A66A35C991EA-1.jpeg)
+![PhoneRecentsTab](./Images/promo-video.gif)
 
 ## Installation
 
