@@ -57,7 +57,7 @@ struct ContentView: View {
 }
 ```
 
-###Notes
+### Notes
 - It is best practice to place the `.navigationTitle(_:within:)` as close to the top level of each view as possible. Ideally it is applied to the view that is a direct child of `NavigationView`.
 - It is best practice to use separate `View` types as the `destination` for a `NavigationLink` as opposed to defining the destination inline. This ensures that the order of evaluating the `View.body` property matches the order that they will be displayed.
 - You *can* mix and match the system `.navigationTitle()` with this, it has been tested but there may be edges cases. If so please submit an Issue!
