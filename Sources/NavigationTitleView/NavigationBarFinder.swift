@@ -7,9 +7,50 @@
 
 import SwiftUI
 
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
 
 import UIKit
+
+@available(iOS 14.0, tvOS 14.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
+  static var mapping: [Namespace.ID: NavigationControllerDelegate] = [:]
+
+  private weak var wrappedDelegate: UINavigationControllerDelegate?
+
+  init(wrapping delegate: UINavigationControllerDelegate?) {
+    self.wrappedDelegate = delegate
+  }
+
+  var title: String?
+  func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    if let t = title,
+       viewController.title == nil {
+      viewController.navigationItem.title = t
+      viewController.title = t
+    }
+    title = nil
+
+    wrappedDelegate?.navigationController?(navigationController, willShow: viewController, animated: animated)
+  }
+
+  override func responds(to aSelector: Selector!) -> Bool {
+    if #selector(navigationController(_:willShow:animated:)) == aSelector {
+      return true
+    }
+
+    return wrappedDelegate?.responds(to: aSelector) ?? false
+  }
+
+  override func forwardingTarget(for aSelector: Selector!) -> Any? {
+    if #selector(navigationController(_:willShow:animated:)) == aSelector {
+      return self
+    }
+
+    return wrappedDelegate
+  }
+}
 
 @available(iOS 14.0, tvOS 14.0, *)
 @available(macOS, unavailable)
@@ -19,10 +60,6 @@ class NavigationBarFindingViewController: UIViewController {
 
   init(within namespace: Namespace.ID) {
     self.namespace = namespace
-
-    let wrapper = RootNavigationBarFinder.namespaceToInterposer[namespace, default: InterposeWrapper()]
-    RootNavigationBarFinder.namespaceToInterposer[namespace] = wrapper
-
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -33,9 +70,10 @@ class NavigationBarFindingViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    if let navcontroller = navigationController,
-       let wrapper = RootNavigationBarFinder.namespaceToInterposer[namespace] {
-      wrapper.navigationController = navcontroller
+    if let navcontroller = navigationController {
+      let delegate = NavigationControllerDelegate(wrapping: navcontroller.delegate)
+      navcontroller.delegate = delegate
+      NavigationControllerDelegate.mapping[namespace] = delegate
     }
   }
 }
@@ -44,18 +82,9 @@ class NavigationBarFindingViewController: UIViewController {
 @available(macOS, unavailable)
 @available(watchOS, unavailable)
 struct RootNavigationBarFinder: UIViewControllerRepresentable {
-  static var namespaceToInterposer: [Namespace.ID: InterposeWrapper] = [:]
-
   let namespace: Namespace.ID
-  init(within: Namespace.ID) {
-    self.namespace = within
-
-    guard let wrapper = RootNavigationBarFinder.namespaceToInterposer[self.namespace] else { return }
-    if wrapper.hasBeenBuiltAtLeastOnce {
-      wrapper.removeTitlesFromLastBuild()
-    }
-
-    wrapper.markBuildComplete()
+  init(within namespace: Namespace.ID) {
+    self.namespace = namespace
   }
 
   func makeUIViewController(context: Context) -> NavigationBarFindingViewController {
@@ -65,4 +94,4 @@ struct RootNavigationBarFinder: UIViewControllerRepresentable {
   func updateUIViewController(_ uiViewController: NavigationBarFindingViewController, context: Context) { }
 }
 
-#endif
+#endif // canImport(UIKit)

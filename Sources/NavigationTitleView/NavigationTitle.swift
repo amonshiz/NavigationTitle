@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
+
 import UIKit
 
 @available(iOS 14.0, tvOS 14.0, *)
@@ -44,28 +45,35 @@ struct TitleSetter: View {
   init(within namespace: Namespace.ID, title: String) {
     self.title = title
 
-    let wrapper = RootNavigationBarFinder.namespaceToInterposer[namespace, default: InterposeWrapper()]
-    wrapper.addTitle(title)
-    RootNavigationBarFinder.namespaceToInterposer[namespace] = wrapper
+    NavigationControllerDelegate.mapping[namespace]?.title = title
   }
 
   var body: some View {
-    CurrentViewControllerTitleSetter(title: title)
-      .allowsHitTesting(false)
-      .frame(width: 0, height: 0, alignment: .center)
+    AnyView(
+      CurrentViewControllerTitleSetter(title: title)
+        .allowsHitTesting(false)
+        .frame(width: 0, height: 0, alignment: .center)
+    )
   }
 }
 
-@available(iOS 14.0, tvOS 14.0, *)
-@available(macOS, unavailable)
-@available(watchOS, unavailable)
+#endif // canImport(UIKit)
+
+@available(iOS 14.0, OSX 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension View {
   func navigationTitle(_ title: String, within namespace: Namespace.ID) -> some View {
-    self.background(TitleSetter(within: namespace, title: title))
+    #if canImport(UIKit)
+    return self.background(TitleSetter(within: namespace, title: title))
+    #else
+    return self
+    #endif
   }
 
   func rootNavigationBarIdentified(within namespace: Namespace.ID) -> some View {
-    self.background(RootNavigationBarFinder(within: namespace))
+    #if canImport(UIKit)
+    return self.background(RootNavigationBarFinder(within: namespace))
+    #else
+    return self
+    #endif
   }
 }
-#endif

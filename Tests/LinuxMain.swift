@@ -3,5 +3,5 @@ import XCTest
 import NavigationTitleViewTests
 
 var tests = [XCTestCaseEntry]()
-tests += NavigationTitleViewTests.allTests()
+tests += NavigationTitleTests.allTests()
 XCTMain(tests)
