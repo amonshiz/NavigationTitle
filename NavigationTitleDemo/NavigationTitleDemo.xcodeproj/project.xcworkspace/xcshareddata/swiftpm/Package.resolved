@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NavigationTitle",
+        "repositoryURL": "https://github.com/amonshiz/NavigationTitle",
+        "state": {
+          "branch": "main",
+          "revision": "23cae37c9a6b0cb1df38da949854408d6ac168fa",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

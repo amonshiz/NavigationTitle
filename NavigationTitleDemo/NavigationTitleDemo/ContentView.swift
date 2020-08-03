@@ -1,12 +1,12 @@
 //
 //  ContentView.swift
-//  NavigationTitleViewDemo
+//  NavigationTitleDemo
 //
 //  Created by Andrew Monshizadeh on 7/27/20.
 //
 
 import SwiftUI
-import NavigationTitleView
+import NavigationTitle
 
 struct ContentView: View {
   @Namespace var contentView

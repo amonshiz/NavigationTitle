@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA07376024CFD5C7000DCEAC /* NavigationTitleViewDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07375F24CFD5C7000DCEAC /* NavigationTitleViewDemoApp.swift */; };
+		DA07376024CFD5C7000DCEAC /* NavigationTitleDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07375F24CFD5C7000DCEAC /* NavigationTitleDemoApp.swift */; };
 		DA07376224CFD5C7000DCEAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07376124CFD5C7000DCEAC /* ContentView.swift */; };
 		DA07376424CFD5C8000DCEAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA07376324CFD5C8000DCEAC /* Assets.xcassets */; };
 		DA07376724CFD5C8000DCEAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA07376624CFD5C8000DCEAC /* Preview Assets.xcassets */; };
-		DA921A2F24D8AAAB0051C993 /* NavigationTitleView in Frameworks */ = {isa = PBXBuildFile; productRef = DA921A2E24D8AAAB0051C993 /* NavigationTitleView */; };
+		DA921A3224D8C35A0051C993 /* NavigationTitle in Frameworks */ = {isa = PBXBuildFile; productRef = DA921A3124D8C35A0051C993 /* NavigationTitle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA07375C24CFD5C7000DCEAC /* NavigationTitleViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationTitleViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA07375F24CFD5C7000DCEAC /* NavigationTitleViewDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleViewDemoApp.swift; sourceTree = "<group>"; };
+		DA07375C24CFD5C7000DCEAC /* NavigationTitleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationTitleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA07375F24CFD5C7000DCEAC /* NavigationTitleDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleDemoApp.swift; sourceTree = "<group>"; };
 		DA07376124CFD5C7000DCEAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA07376324CFD5C8000DCEAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA07376624CFD5C8000DCEAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA921A2F24D8AAAB0051C993 /* NavigationTitleView in Frameworks */,
+				DA921A3224D8C35A0051C993 /* NavigationTitle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,29 +38,30 @@
 		DA07375324CFD5C7000DCEAC = {
 			isa = PBXGroup;
 			children = (
-				DA07375E24CFD5C7000DCEAC /* NavigationTitleViewDemo */,
+				DA07375E24CFD5C7000DCEAC /* NavigationTitleDemo */,
 				DA07375D24CFD5C7000DCEAC /* Products */,
+				DA921A3024D8C35A0051C993 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		DA07375D24CFD5C7000DCEAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA07375C24CFD5C7000DCEAC /* NavigationTitleViewDemo.app */,
+				DA07375C24CFD5C7000DCEAC /* NavigationTitleDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA07375E24CFD5C7000DCEAC /* NavigationTitleViewDemo */ = {
+		DA07375E24CFD5C7000DCEAC /* NavigationTitleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DA07375F24CFD5C7000DCEAC /* NavigationTitleViewDemoApp.swift */,
+				DA07375F24CFD5C7000DCEAC /* NavigationTitleDemoApp.swift */,
 				DA07376124CFD5C7000DCEAC /* ContentView.swift */,
 				DA07376324CFD5C8000DCEAC /* Assets.xcassets */,
 				DA07376824CFD5C8000DCEAC /* Info.plist */,
 				DA07376524CFD5C8000DCEAC /* Preview Content */,
 			);
-			path = NavigationTitleViewDemo;
+			path = NavigationTitleDemo;
 			sourceTree = "<group>";
 		};
 		DA07376524CFD5C8000DCEAC /* Preview Content */ = {
@@ -71,12 +72,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DA921A3024D8C35A0051C993 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA07375B24CFD5C7000DCEAC /* NavigationTitleViewDemo */ = {
+		DA07375B24CFD5C7000DCEAC /* NavigationTitleDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA07376B24CFD5C8000DCEAC /* Build configuration list for PBXNativeTarget "NavigationTitleViewDemo" */;
+			buildConfigurationList = DA07376B24CFD5C8000DCEAC /* Build configuration list for PBXNativeTarget "NavigationTitleDemo" */;
 			buildPhases = (
 				DA07375824CFD5C7000DCEAC /* Sources */,
 				DA07375924CFD5C7000DCEAC /* Frameworks */,
@@ -86,12 +94,12 @@
 			);
 			dependencies = (
 			);
-			name = NavigationTitleViewDemo;
+			name = NavigationTitleDemo;
 			packageProductDependencies = (
-				DA921A2E24D8AAAB0051C993 /* NavigationTitleView */,
+				DA921A3124D8C35A0051C993 /* NavigationTitle */,
 			);
-			productName = NavigationTitleViewDemo;
-			productReference = DA07375C24CFD5C7000DCEAC /* NavigationTitleViewDemo.app */;
+			productName = NavigationTitleDemo;
+			productReference = DA07375C24CFD5C7000DCEAC /* NavigationTitleDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DA07375724CFD5C7000DCEAC /* Build configuration list for PBXProject "NavigationTitleViewDemo" */;
+			buildConfigurationList = DA07375724CFD5C7000DCEAC /* Build configuration list for PBXProject "NavigationTitleDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,13 +126,13 @@
 			);
 			mainGroup = DA07375324CFD5C7000DCEAC;
 			packageReferences = (
-				DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitleView" */,
+				DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitle" */,
 			);
 			productRefGroup = DA07375D24CFD5C7000DCEAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA07375B24CFD5C7000DCEAC /* NavigationTitleViewDemo */,
+				DA07375B24CFD5C7000DCEAC /* NavigationTitleDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -147,7 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA07376224CFD5C7000DCEAC /* ContentView.swift in Sources */,
-				DA07376024CFD5C7000DCEAC /* NavigationTitleViewDemoApp.swift in Sources */,
+				DA07376024CFD5C7000DCEAC /* NavigationTitleDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,16 +284,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NavigationTitleViewDemo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NavigationTitleDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = BDKG93339Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NavigationTitleViewDemo/Info.plist;
+				INFOPLIST_FILE = NavigationTitleDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amonshiz.NavigationTitleViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amonshiz.NavigationTitleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,16 +306,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NavigationTitleViewDemo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NavigationTitleDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = BDKG93339Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NavigationTitleViewDemo/Info.plist;
+				INFOPLIST_FILE = NavigationTitleDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amonshiz.NavigationTitleViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amonshiz.NavigationTitleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA07375724CFD5C7000DCEAC /* Build configuration list for PBXProject "NavigationTitleViewDemo" */ = {
+		DA07375724CFD5C7000DCEAC /* Build configuration list for PBXProject "NavigationTitleDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA07376924CFD5C8000DCEAC /* Debug */,
@@ -326,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA07376B24CFD5C8000DCEAC /* Build configuration list for PBXNativeTarget "NavigationTitleViewDemo" */ = {
+		DA07376B24CFD5C8000DCEAC /* Build configuration list for PBXNativeTarget "NavigationTitleDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA07376C24CFD5C8000DCEAC /* Debug */,
@@ -338,9 +346,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitleView" */ = {
+		DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitle" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/amonshiz/NavigationTitleView";
+			repositoryURL = "https://github.com/amonshiz/NavigationTitle";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -349,10 +357,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA921A2E24D8AAAB0051C993 /* NavigationTitleView */ = {
+		DA921A3124D8C35A0051C993 /* NavigationTitle */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitleView" */;
-			productName = NavigationTitleView;
+			package = DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitle" */;
+			productName = NavigationTitle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

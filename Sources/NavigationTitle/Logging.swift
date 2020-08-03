@@ -10,12 +10,12 @@ import Foundation
 @available(iOS 13.0, tvOS 13.0, *)
 @available(macOS, unavailable)
 @available(watchOS, unavailable)
-struct NavigationTitleViewLogging {
+struct NavigationTitleLogging {
   static var isEnabled = false
 
   static func log(_ object: @autoclosure () -> Any) {
     if isEnabled {
-      print("[NavigationTitleView] \(object())")
+      print("[NavigationTitle] \(object())")
     }
   }
 }

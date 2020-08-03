@@ -1,6 +1,6 @@
 import XCTest
 
-import NavigationTitleViewTests
+import NavigationTitleTests
 
 var tests = [XCTestCaseEntry]()
 tests += NavigationTitleTests.allTests()

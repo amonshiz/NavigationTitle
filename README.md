@@ -1,4 +1,4 @@
-# NavigationTitleView
+# NavigationTitle
 
 Package that lets a `navigationTitle` and a `ToolbarItemPlacement.principal` work together
 
@@ -13,13 +13,13 @@ Add to your `Package.swift` file
 let package = Package(
   ...
   dependencies = [
-    .package(url: "https://github.com/amonshiz/NavigationTitleView.git", Package.Dependency.Requirement.branch("main")),
+    .package(url: "https://github.com/amonshiz/NavigationTitle.git", Package.Dependency.Requirement.branch("main")),
     ...
   ],
   targets = [
     .target(
       name: "YourTarget",
-      dependencies: ["NavigationTitleView", …],
+      dependencies: ["NavigationTitle", …],
       ...),
     ...
   ]
@@ -28,14 +28,14 @@ let package = Package(
 
 ### Add to an app
 - File -> Swift Packages -> Add Package Dependency ...
-- `https://github.com/amonshiz/NavigationTitleView.git`
+- `https://github.com/amonshiz/NavigationTitle.git`
 - Track the `main` branch (I make no promises on keeping tags up to date)
 
 ## Usage
 
 ```swift
 import SwiftUI
-import NavigationTitleView
+import NavigationTitle
 
 struct ContentView: View {
   @Namespace var aNamespace // required

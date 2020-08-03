@@ -1,6 +1,6 @@
 //
-//  NavigationTitleViewDemoApp.swift
-//  NavigationTitleViewDemo
+//  NavigationTitleDemoApp.swift
+//  NavigationTitleDemo
 //
 //  Created by Andrew Monshizadeh on 7/27/20.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct NavigationTitleViewDemoApp: App {
+struct NavigationTitleDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
