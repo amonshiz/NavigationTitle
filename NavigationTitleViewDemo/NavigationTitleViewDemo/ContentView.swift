@@ -14,7 +14,9 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       List {
-        Text("Hello, world!").padding()
+        Text("ContentView identifies the root navigation controller AND uses the custom navigationTitle to set it's title")
+        NavigationLink("Go to Second View", destination:
+                        SecondView(namespace: contentView))
       }
       .toolbar(items: {
         ToolbarItem(placement: .principal) {
@@ -26,8 +28,53 @@ struct ContentView: View {
         }
       })
       .navigationTitle("Recents", within: contentView)
+      .rootNavigationBarIdentified(within: contentView)
     }
-    .rootNavigationBarIdentified(within: contentView)
+  }
+}
+
+struct SecondView: View {
+  let namespace: Namespace.ID
+  var body: some View {
+    List {
+      Text("Second View uses SwiftUI provided navigationTitle")
+      NavigationLink("Go to Third View", destination: ThirdView(namespace: namespace))
+    }
+    .navigationTitle("Second View")
+  }
+}
+
+struct ThirdView: View {
+  let namespace: Namespace.ID
+  @State var toggle = false
+  @State var timer: Timer?
+  var body: some View {
+    List {
+      Text("Third View uses custom navigationTitle AND updates the title at runtime")
+      NavigationLink("Go to Fourth View", destination:
+                      FourthView(namespace: namespace)
+      )
+    }
+    .navigationTitle(toggle ? "True" : "False")
+    .onAppear {
+      timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+        toggle.toggle()
+      })
+    }
+    .onDisappear {
+      timer?.invalidate()
+      timer = nil
+    }
+  }
+}
+
+struct FourthView: View {
+  let namespace: Namespace.ID
+  var body: some View {
+    List {
+      Text("Fourth View uses custom navigationTitle")
+    }
+    .navigationTitle("Fourth View", within: namespace)
   }
 }
 

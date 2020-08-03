@@ -2,20 +2,11 @@
   "object": {
     "pins": [
       {
-        "package": "InterposeKit",
-        "repositoryURL": "https://github.com/steipete/InterposeKit.git",
-        "state": {
-          "branch": "master",
-          "revision": "7a9367e1743ae34009a94a52e02bcdb5ae0a70a7",
-          "version": null
-        }
-      },
-      {
         "package": "NavigationTitleView",
         "repositoryURL": "https://github.com/amonshiz/NavigationTitleView",
         "state": {
           "branch": "main",
-          "revision": "44842d339a12b1197a21e4d39c11cd5a79b97fd0",
+          "revision": "6af1a05924fdc327b3e9f2b5f64bdbce45f96b94",
           "version": null
         }
       }

@@ -11,7 +11,7 @@
 		DA07376224CFD5C7000DCEAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07376124CFD5C7000DCEAC /* ContentView.swift */; };
 		DA07376424CFD5C8000DCEAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA07376324CFD5C8000DCEAC /* Assets.xcassets */; };
 		DA07376724CFD5C8000DCEAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA07376624CFD5C8000DCEAC /* Preview Assets.xcassets */; };
-		DA07377024CFD8BA000DCEAC /* NavigationTitleView in Frameworks */ = {isa = PBXBuildFile; productRef = DA07376F24CFD8BA000DCEAC /* NavigationTitleView */; };
+		DA921A2F24D8AAAB0051C993 /* NavigationTitleView in Frameworks */ = {isa = PBXBuildFile; productRef = DA921A2E24D8AAAB0051C993 /* NavigationTitleView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA07377024CFD8BA000DCEAC /* NavigationTitleView in Frameworks */,
+				DA921A2F24D8AAAB0051C993 /* NavigationTitleView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			);
 			name = NavigationTitleViewDemo;
 			packageProductDependencies = (
-				DA07376F24CFD8BA000DCEAC /* NavigationTitleView */,
+				DA921A2E24D8AAAB0051C993 /* NavigationTitleView */,
 			);
 			productName = NavigationTitleViewDemo;
 			productReference = DA07375C24CFD5C7000DCEAC /* NavigationTitleViewDemo.app */;
@@ -118,7 +118,7 @@
 			);
 			mainGroup = DA07375324CFD5C7000DCEAC;
 			packageReferences = (
-				DA07376E24CFD8BA000DCEAC /* XCRemoteSwiftPackageReference "NavigationTitleView" */,
+				DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitleView" */,
 			);
 			productRefGroup = DA07375D24CFD5C7000DCEAC /* Products */;
 			projectDirPath = "";
@@ -338,7 +338,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DA07376E24CFD8BA000DCEAC /* XCRemoteSwiftPackageReference "NavigationTitleView" */ = {
+		DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitleView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/amonshiz/NavigationTitleView";
 			requirement = {
@@ -349,9 +349,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA07376F24CFD8BA000DCEAC /* NavigationTitleView */ = {
+		DA921A2E24D8AAAB0051C993 /* NavigationTitleView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DA07376E24CFD8BA000DCEAC /* XCRemoteSwiftPackageReference "NavigationTitleView" */;
+			package = DA921A2D24D8AAAB0051C993 /* XCRemoteSwiftPackageReference "NavigationTitleView" */;
 			productName = NavigationTitleView;
 		};
 /* End XCSwiftPackageProductDependency section */
