@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Xcode 12 beta 5 introduced functionality that makes this no longer necessary. Please do not use. :)
+
 # NavigationTitle
 
 Package that lets a `navigationTitle` and a `ToolbarItemPlacement.principal` work together
